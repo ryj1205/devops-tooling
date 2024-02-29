@@ -1,3 +1,3 @@
 #!/bin/bash
-mkdir ~/jenkins-pipelines
-mkdir ~/jenkins-pipelines/processed
+mkdir ~/jenkins-pipelines || true
+mkdir ~/jenkins-pipelines/processed || true
