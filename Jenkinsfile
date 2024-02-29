@@ -3,13 +3,22 @@ pipeline {
     stages {
         stage('Create directory') {
             steps {
-                sh 'mkdir ~/jenkins-pipelines || true'
+                sh 'bash create-directory.sh'
             }
         }
-        stage('Create files') {
+        stage('Create text file') {
             steps {
-                sh 'touch ~/jenkins-pipelines/file.txt'
-                sh 'ls -al'
+                sh 'bash create-file.sh'
+            }
+        }
+        stage('Add information to text file') {
+            steps {
+                sh 'bash update-file.sh'
+            }
+        }
+        stage('Move text file into prod directory') {
+            steps {
+                sh 'move-file.sh'
             }
         }
     }
