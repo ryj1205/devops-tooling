@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Move text file into prod directory') {
             steps {
-                sh 'move-file.sh'
+                sh 'bash move-file.sh'
             }
         }
     }
